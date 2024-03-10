@@ -6,7 +6,7 @@ Demo https://lezcanodev.github.io/forntent-app-reserva/
   <li>Backend: typeorm, express, typescript, joi (para validaciones)</li>
   <li>Fontend: React </li>
   <li>Base de datos: mysql</li>
-  <li>Testing: jest, supertest</li>
+  <li>Testing (solo backend): jest, supertest</li>
 </ul>
 
 <h3>Caracteristicas</h3>
