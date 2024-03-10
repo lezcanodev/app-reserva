@@ -1,5 +1,4 @@
 import { BaseModel } from '@core/models/baseModel.model';
-import { DateService } from '@core/models/services/date.service';
 import { ReservaError } from './reserva.error';
 import { ReservaServiceChecker } from './services/reservaChecker.service';
 import { ReservaCalcMonto } from './services/reservaCalcMonto.service';
@@ -35,13 +34,13 @@ export class Reserva extends BaseModel<ReservaProps>{
     public static build(props: ReservaProps){
         const validFechaEntrada = ReservaServiceChecker.isValidFechaEntrada(props.fechaEntrada);
         const validFechaSalida = ReservaServiceChecker.isValidFechaSalida(props.fechaSalida, props.fechaEntrada);
-
+        
         if(validFechaEntrada !== null){
-            new ReservaError(validFechaEntrada.message, 'fechaEntrada');
+           throw new ReservaError(validFechaEntrada.message, 'fechaEntrada');
         }
 
         if(validFechaSalida != null){
-            new ReservaError(validFechaSalida.message, 'fechaSalida');
+            throw new ReservaError(validFechaSalida.message, 'fechaSalida');
         }
 
         return new Reserva(props);

@@ -4,6 +4,7 @@ import { DataSource } from 'typeorm';
 
 const entitiesDir = path.join(__dirname, 'entities', '*.{js,ts}');
 
+
 export const AppDataSource = new DataSource({
     type: 'mysql',
     host: process.env.DB_HOST,

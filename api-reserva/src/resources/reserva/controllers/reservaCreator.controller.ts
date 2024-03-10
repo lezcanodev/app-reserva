@@ -28,11 +28,12 @@ export default class ReservaCreatorController extends BaseController{
                 montoReserva: null
             };
             const newReserva = Reserva.build(reservaProps);
-    
+            
             await this.params.reservaCreator.create(newReserva);
 
+
             res.status(HTTP_RESPONSES.CREATED.code).json({
-                data: reservaProps
+                data: newReserva.getProps()
             });
 
         }catch(error: any){
