@@ -9,20 +9,27 @@
      "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
 
     /* Modules */
-    "module": "commonjs",                                /* Specify what module code is generated. */
-    // "rootDir": "./",                                  /* Specify the root folder within your source files. */
-    // "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
-    // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
+    "module": "CommonJS",                                /* Specify what module code is generated. */
+    //"rootDir": "./",                                  /* Specify the root folder within your source files. */
+    //"moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
+    //"baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
+    
+    /* Specify a set of entries that re-map imports to additional lookup locations. */
     "paths": {
       "@datasource/*": ["./src/datasource/*"],
       "@persona/*": ["./src/resources/persona/*"],
       "@habitacion/*": ["./src/resources/habitacion/*"],
       "@reserva/*": ["./src/resources/reserva/*"],
-      "@core/*": ["./src/resources/core/*"]
-    },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
+      "@core/*": ["./src/resources/core/*"],
+      "@server/*": ["./src/server/*"],
+      "@tests/*": ["./tests/*"]
+    },                                      
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
-    // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
+     
+    /* Specify type package names to be included without being referenced in a source file. */
+    "types": ["jest"],
+
     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
     // "moduleSuffixes": [],                             /* List of file name suffixes to search when resolving a module. */
     // "resolveJsonModule": true,                        /* Enable importing .json files. */
@@ -91,9 +98,9 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "src/**/*.ts" 
-  ],
+    "src/**/*.ts", "tests/**/*.ts"
+, "tests/resources/reserva/router/reserva.router.test.ts"  ],
   "exclude": [
-    "node_modules" 
+    "node_modules", "dist"
   ]
 }

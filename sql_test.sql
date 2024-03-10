@@ -1,13 +1,12 @@
 -- creamos la base de datos
-CREATE DATABASE app_reservas  
+CREATE DATABASE app_reservas_test
 	DEFAULT CHARACTER SET utf8mb4
 	DEFAULT COLLATE utf8mb4_unicode_ci;
 
 -- establecemos UTC como zona horaria en una session
 SET @@session.time_zone = "+00:00"; 
 
-use app_reservas;
-
+use app_reservas_test;
 
 -- Tabla personas
 CREATE TABLE IF NOT EXISTS personas (
